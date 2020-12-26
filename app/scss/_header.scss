@@ -1,0 +1,77 @@
+.header {
+  background-color: $bg-main;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  @include breakpoints-down(medium) {
+    padding: 0px 5%;
+  }
+  > nav {
+    font-size: 1rem;
+    color: $secondary;
+    padding: 20px 0px 10px 0px;
+    .active {
+      color: $primary;
+      border-bottom: 2px solid $primary;
+      font-weight: 700;
+    }
+    > div:nth-child(2) {
+      @include breakpoints-down(medium) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0px;
+        background-color: white;
+        color: $primary;
+        width: 100%;
+        left: 0px;
+        height: 100vh;
+        overflow: hidden;
+        transform: translate(-100%);
+        transition-duration: 0.4s;
+      }
+      > a {
+        margin: 0px 23px;
+        @include breakpoints-down(medium) {
+          margin: 10px 0px;
+        }
+        &:last-child {
+          color: $primary;
+          background-color: white;
+          padding: 14px 24px;
+          border-radius: 25px;
+          box-shadow: 5px 5px 20px #f3efef;
+        }
+      }
+    }
+    > .hamburger {
+      cursor: pointer;
+      display: none;
+
+      @include breakpoints-down(medium) {
+        display: block;
+        z-index: 10;
+      }
+      > div {
+        width: 30px;
+        height: 2px;
+        margin: 5px 0px;
+        background: $secondary;
+      }
+    }
+    .hamburger__active {
+      transform: translate(0%) !important;
+    }
+    .toggle .line1 {
+      transform: translate(-0px, 6px) rotate(-45deg);
+    }
+    .toggle .line3 {
+      transform: translate(-0px, -7px) rotate(45deg);
+    }
+    .toggle .line2 {
+      opacity: 0;
+    }
+  }
+}

@@ -1,0 +1,135 @@
+.apply {
+  background-image: url("../../images/form_bg.png");
+  height: 400px;
+  margin: 100px 0px;
+  @include breakpoints-down(large) {
+    background-image: url("../../images/bg_large.png");
+  }
+  @include breakpoints-down(medium) {
+    height: fit-content;
+    background-image: none;
+  }
+  .red {
+    color: red;
+  }
+  > div {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    @include breakpoints-down(medium) {
+      grid-template-columns: 90%;
+      place-items: center;
+      justify-content: center;
+    }
+    height: 100%;
+    > div:nth-of-type(1) {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      top: -100px;
+      @include breakpoints-down(medium) {
+        top: 0px;
+      }
+    }
+    > div:nth-child(2) {
+      > form {
+        display: flex;
+        flex-direction: column;
+        width: 460px;
+        height: 563px;
+        @include breakpoints-down(small) {
+          width: 350px;
+          height: fit-content;
+          padding: 20px 10px;
+        }
+        @include breakpoints-down(x-small) {
+          width: 100%;
+        }
+        position: relative;
+        padding: 0px 50px;
+        box-shadow: 2px 2px 10px lightgray;
+        border-radius: 5px;
+        top: -80px;
+        z-index: 10;
+        @include breakpoints-down(medium) {
+          top: 0px;
+          margin-top: 20px;
+        }
+        ::after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          z-index: -2;
+          top: 0px;
+          left: 0px;
+          background-color: white;
+        }
+        ::before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          z-index: -1;
+          top: 0px;
+          left: 0px;
+          background-image: url("../../images/bg\ shape@1X.png");
+          background-size: 120%;
+          background-repeat: no-repeat;
+          background-position: 100px -150px;
+        }
+        a {
+          text-decoration: underline;
+
+          color: #bcc4ca;
+        }
+        > h3 {
+          text-align: center;
+          margin-bottom: 30px;
+          margin-top: 30px;
+          font-weight: 300;
+          font-size: 2rem;
+          color: #202020;
+          letter-spacing: 5px;
+        }
+        ::placeholder {
+          color: #5a6e79;
+          font-size: 0.9rem;
+          font-weight: 400;
+        }
+        > input {
+          background: none;
+          outline: none;
+          border: none;
+          border-bottom: 1px solid #d7e4ed;
+          margin: 10px 0px;
+          padding: 10px;
+        }
+        label {
+          font-size: 0.9rem;
+          color: #89979e;
+        }
+        > div {
+          margin-top: 15px;
+        }
+        > div:nth-of-type(2) {
+          display: flex;
+          justify-content: space-between;
+          margin: 20px 0px;
+          > button {
+            flex: 0.7;
+            background-color: $primary;
+            color: #d8f2e2;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+          }
+        }
+      }
+    }
+  }
+}

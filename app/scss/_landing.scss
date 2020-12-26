@@ -1,0 +1,57 @@
+.landing {
+  background-color: $bg-main;
+  min-height: 100vh;
+  background-image: url("../../images/main_bg.png");
+  background-position: bottom;
+  position: relative;
+  background-repeat: no-repeat;
+  @include breakpoints-down(medium) {
+    background-size: 100%;
+    background-position: bottom;
+  }
+  @include breakpoints-down(small) {
+    background-image: none;
+  }
+  > div {
+    min-height: 100vh;
+
+    position: relative;
+
+    > div {
+      position: absolute;
+      top: 50%;
+      left: 55%;
+      z-index: 100;
+      transform: translate(-55%, -50%);
+      @include breakpoints-down(medium) {
+        left: 10%;
+        transform: translate(-10%, -50%);
+      }
+      @include breakpoints-down(small) {
+        width: 100%;
+        padding: 10px;
+      }
+      > h1 {
+        font-family: "Montserrat", sans-serif;
+        font-size: 2.5rem;
+        color: $primary;
+        @include breakpoints-down(small) {
+          font-size: 2rem;
+        }
+      }
+      > P {
+        font-size: 1.125rem;
+        margin: 20px 0px;
+      }
+      > a {
+        display: inline-block;
+        background-color: $primary;
+        color: white;
+        padding: 18px 32px;
+        border-radius: 30px;
+        margin-top: 18px;
+        font-size: 1.125rem;
+      }
+    }
+  }
+}

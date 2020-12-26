@@ -1,0 +1,69 @@
+.about {
+  > div:nth-child(1) {
+    display: grid;
+    justify-content: center;
+    margin-top: 60px;
+    margin-bottom: 100px;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    color: white;
+
+    text-align: center;
+    @include breakpoints-down(medium) {
+      grid-template-columns: 1fr 1fr;
+      justify-content: center;
+      place-items: center;
+      align-items: center;
+    }
+    @include breakpoints-down(special) {
+      grid-template-columns: 1fr;
+      justify-content: center;
+      place-items: center;
+      align-items: center;
+    }
+
+    > div {
+      width: 360px;
+      height: 283px;
+      border-radius: 3px;
+      margin-bottom: 15px;
+      color: #252c3a;
+      display: grid;
+      place-items: center;
+      > h3 {
+        font-size: 2rem;
+        font-weight: 700;
+        position: relative;
+        top: -20px;
+      }
+      > img {
+        position: relative;
+        top: 20px;
+      }
+      @include breakpoints-down(medium) {
+        margin: 10px 0px;
+      }
+      @include breakpoints-down(x-small) {
+        width: 80%;
+      }
+    }
+    > div:nth-child(1) {
+      background-color: #f1e3fc;
+    }
+    > div:nth-child(2) {
+      background-color: #e3fcfa;
+    }
+    > div:nth-child(3) {
+      background-color: #fcf0e3;
+    }
+    > div:nth-child(4) {
+      background-color: #fceee3;
+    }
+    > div:nth-child(5) {
+      background-color: #f3fce3;
+    }
+    > div:nth-child(6) {
+      background-color: #e3f3fc;
+    }
+  }
+}
